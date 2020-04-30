@@ -45,10 +45,9 @@ public class ServerTCP {
 
             // Comienza el juego
             salida.println("Cuantas rondas quieres jugar?");
-            rondas = entrada.read();
-            entrada.readLine();
+            rondas = Integer.parseInt(entrada.readLine());
             salida.println("\nComenzamos la partida");
-            int i = 1;
+            int i = 0;
 
             while (true) {
                 //comienza el juego - bucle
@@ -57,7 +56,7 @@ public class ServerTCP {
                 selectOperador = (int) (Math.random() * 3);
 
                 //Pinta ronda + operacion
-                salida.println("Ronda " + i );
+                salida.println("Ronda " + (i+1) );
                 salida.println("--------");
                 salida.println("Operacion: ");
                 salida.println(digito1 +" "+ operador[selectOperador] +" "+ digito2);
@@ -72,7 +71,7 @@ public class ServerTCP {
                     solucion = digito1*digito2;
                 }
 
-                respuesta = entrada.read();
+                respuesta = Integer.parseInt(entrada.readLine());
 
                 if (respuesta == solucion){
                     jugador.puntuacion++;

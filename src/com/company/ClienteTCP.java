@@ -35,9 +35,12 @@ public class ClienteTCP {
 
                 linea = entrada.readLine();
                 System.out.println(linea);
-                num = entrada.read();
+                num = Integer.parseInt(stdIn.readLine());
                 rondas = num;
-                salida.println(linea);
+                salida.println(num);
+                linea = entrada.readLine();
+                System.out.println(linea);
+
                 linea = entrada.readLine();
                 System.out.println(linea);
 
@@ -54,13 +57,23 @@ public class ClienteTCP {
                     linea = entrada.readLine();
                     System.out.println(linea);
 
-                    resp = entrada.read();
+
+                    resp = Integer.parseInt(stdIn.readLine());
+                    salida.println(resp);
+
+                    linea = entrada.readLine();
+                    System.out.println(linea);
+                    i++;
                     if (i == rondas){
                     break;
                     }
                 }
-                System.out.println(entrada.readLine());
-                System.out.println(entrada.readLine());
+                linea = entrada.readLine();
+                System.out.println(linea);
+                entrada.readLine();
+                linea = entrada.readLine();
+                System.out.println(linea);
+
 
             } catch (IOException e) {
                 System.out.println("IOException: " + e.getMessage());
